@@ -1,15 +1,26 @@
 package main
 
+import main.IDictionary.Companion.DICTIONARY_NAME
+import java.io.File
+
 object TreeSetDictionary : IDictionary{
+
+    private var words = mutableSetOf<String>()
+
+    init {
+        File(DICTIONARY_NAME).forEachLine {
+            words.add(it)
+        }
+    }
     override fun add(word: String): Boolean {
-        TODO("Not yet implemented")
+        return words.add(word)
     }
 
     override fun find(word: String): Boolean {
-        TODO("Not yet implemented")
+        return words.contains(word)
     }
 
     override fun size(): Int {
-        TODO("Not yet implemented")
+        return words.size
     }
 }
