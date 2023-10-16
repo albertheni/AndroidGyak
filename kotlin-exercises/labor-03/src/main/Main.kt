@@ -1,9 +1,9 @@
 package main
 
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+    val repo = ItemRepository
+    val service = ItemService(repo)
+    val itemController = ItemController(service)
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    itemController.quiz(3)
 }
