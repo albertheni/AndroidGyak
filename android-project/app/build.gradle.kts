@@ -61,4 +61,9 @@ dependencies {
     androidTestImplementation ("androidx.navigation:navigation-testing:$nav_version")
 
     implementation ("com.google.android.material:material:1.11.0-alpha01")
+
+    //GSON
+    implementation("com.google.code.gson:gson:2.10")
+
+    
 }
