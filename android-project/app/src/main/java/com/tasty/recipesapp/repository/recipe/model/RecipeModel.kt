@@ -1,4 +1,7 @@
 package com.tasty.recipesapp.repository.recipe.model
 
-class RecipeModel {
-}
+data class RecipeModel (
+        val name: String,
+        val description: String?,
+        val thumbnailUrl: String
+)

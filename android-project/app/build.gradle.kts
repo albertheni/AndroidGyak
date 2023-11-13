@@ -59,7 +59,7 @@ dependencies {
 
     // Testing Navigation
     androidTestImplementation ("androidx.navigation:navigation-testing:$nav_version")
-
+    //Bottom Navigation
     implementation ("com.google.android.material:material:1.11.0-alpha01")
 
     //GSON
