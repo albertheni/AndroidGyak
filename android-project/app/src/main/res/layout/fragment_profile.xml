@@ -7,15 +7,41 @@
              tools:context=".ui.profile.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+               android:id="@+id/back"
+               android:src="@drawable/back4"
+               android:scaleType="centerCrop"
+               tools:ignore="MissingConstraints"/>
+
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" android:id="@+id/textView6"/>
+            android:id="@+id/textView6" tools:layout_editor_absoluteY="0dp" tools:layout_editor_absoluteX="0dp"/>
     <TextView
             android:text="Profile_fragment"
             android:layout_width="wrap_content"
             android:layout_height="34dp" android:id="@+id/textView3" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="@+id/textView6"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/newRecipeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:contentDescription="New Recipe"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.88"
+            android:background="@color/green"
+            android:src="@drawable/plus" app:backgroundTint="@color/green"
+            app:rippleColor="@android:color/holo_green_dark"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

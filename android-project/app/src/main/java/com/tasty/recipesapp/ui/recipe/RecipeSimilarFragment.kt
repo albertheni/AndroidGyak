@@ -1,30 +1,25 @@
 package com.tasty.recipesapp.ui.recipe
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tasty.recipesapp.R
 import com.tasty.recipesapp.databinding.FragmentRecipesBinding
-import com.tasty.recipesapp.databinding.RecipeListItemBinding
 import com.tasty.recipesapp.repository.recipe.model.RecipeModel
 import com.tasty.recipesapp.ui.App
-import com.tasty.recipesapp.ui.profile.ProfileViewModel
-import com.tasty.recipesapp.ui.profile.ProfileViewModelFactory
 import com.tasty.recipesapp.ui.recipe.adapter.RecipesListAdapter
 import com.tasty.recipesapp.ui.recipe.viewmodel.RecipeListViewModel
 import com.tasty.recipesapp.ui.recipe.viewmodel.factory.RecipeViewModelFactory
 
-
-class RecipesFragment : Fragment() {
+class RecipeSimilarFragment : Fragment() {
 
     companion object {
         private val TAG = RecipesFragment::class.java.canonicalName
@@ -59,9 +54,10 @@ class RecipesFragment : Fragment() {
 //            viewModel.fetchRecipesData(it)
 //        }
 
-        viewModel.getAllRecipesFromApi()
+        viewModel.getSimilarRecipesFromApi(arguments?.getInt(BUNDLE_EXTRA_SELECTED_RECIPE_ID)!!.toString())
 
-        viewModel.recipesList.observe(viewLifecycleOwner){ recipes ->
+        Log.d("Valamilyen TAG",viewModel.similarList.value.toString())
+        viewModel.similarList.observe(viewLifecycleOwner){ recipes ->
             recipesAdapter.setData(recipes)
             recipesAdapter.notifyItemRangeChanged(0,recipes.lastIndex)
         }
@@ -70,7 +66,7 @@ class RecipesFragment : Fragment() {
     private fun initRecyclerView(){
         recipesAdapter = RecipesListAdapter(ArrayList(),requireContext(),
             onItemClickListener = {
-                recipe-> navigateToRecipeDetails(recipe)
+                    recipe-> navigateToRecipeDetails(recipe)
             })
         binding.recyclerView.adapter = recipesAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(context)

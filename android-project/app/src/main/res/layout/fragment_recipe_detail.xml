@@ -4,18 +4,88 @@
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".ui.recipe.RecipeDetailFragment">
+             tools:context=".ui.recipe.RecipeDetailFragment"
+             android:background="@drawable/back4">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+            android:id="@+id/recipeImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/recipeTitleView"
+            app:layout_constraintDimensionRatio="16:9"/>
+
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" android:id="@+id/textView7"/>
+            android:id="@+id/recipeTitleView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/green"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/recipeImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Recipe Title" />
+
     <TextView
-            android:text="RecipeDetail_fargment"
+            android:id="@+id/recipeRatingsView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/green"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/recipeTitleView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Ratings" />
+
+    <TextView
+            android:id="@+id/recipeTotalTimeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/green"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/recipeRatingsView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Total Time" />
+
+    <TextView
+            android:id="@+id/recipeInstructionsView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/green"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/recipeTotalTimeView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Instructions" />
+
+    <TextView
+            android:id="@+id/recipeDescriptionView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/green"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/recipeInstructionsView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Description" />
+    <Button
+            android:text="Similar Recipes"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView4"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="@+id/textView7"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/recipeSimilarButton"
+            android:textColor="@color/white"
+
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.885" android:backgroundTint="@color/green"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

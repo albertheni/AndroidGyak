@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -65,5 +66,20 @@ dependencies {
     //GSON
     implementation("com.google.code.gson:gson:2.10")
 
-    
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    // Room dependencies
+    implementation("androidx.room:room-runtime:2.6.0")
+    kapt("androidx.room:room-compiler:2.6.0")
+    implementation("androidx.room:room-ktx:2.6.0")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.8.1")
+
+
+
+
+
 }
